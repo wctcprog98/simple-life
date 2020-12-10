@@ -1,172 +1,273 @@
 body {
-    margin: 0;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 300;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
 }
-
 
 /* adding these fixes the majority of spacing/padding issues on websites */
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 /* Typography */
 h1,
 h2,
 h3 {
-    font-family: 'lora', serif;
-    font-weight: 400;
-    color: #143774;
+  font-family: "lora", serif;
+  font-weight: 400;
+  color: #143774;
+  margin-top: 0;
 }
 
-h1 { 
-    font-size: 2rem;
-    margin: 0;
+h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
 a {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 a:hover,
-a:focus 
-{
-    color: #143774;
+a:focus {
+  color: #143774;
 }
 
 strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 /* h1 subtitle */
 .subtitle {
-    font-weight: 700;
-    color: #1792d2;
-    font-size: .75rem;
-    margin: 0;
+  font-weight: 700;
+  color: #1792d2;
+  font-size: 0.75rem;
+  margin: 0;
 }
 
 .article-title {
-    font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem; /* 24px */
 }
 
 .article-info,
 .article-link {
-    font-size: .875rem;
+  font-size: 0.875rem;
 }
 
-.article-link
- {
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #1792d2;
-    text-decoration: none;
+.article-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1792d2;
+  text-decoration: none;
 }
 
 .article-link:hover,
 .article-link:focus {
-    color: #143774;
-    text-decoration: underline;
+  color: #143774;
+  text-decoration: underline;
 }
 
 .article-featured {
-    border-bottom: 1px solid #143774;
-    padding: 1em 0;
-    color: #143774;
+  border-bottom: 1px solid #707070;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .article-info {
-    color: #707070;
+  color: #707070;
+  margin: 2em 0;
+}
+
+.article-recent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+/* change order of content by making parent flex and adding order to the children components */
+.article-recent-main {
+  order: 2;
 }
 
 .article-recent-secondary {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  order: 1;
 }
 
 /* layout */
 
 .container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .container-flex {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
-    background: #f8f8f8;
-    padding: 2em 0;
-}
-
-main {
-    width: 75%;
-}
-
-aside {
-    width: 20%
+  background: #f8f8f8;
+  padding: 2em 0;
+  text-align: center;
+  margin-bottom: 3em;
 }
 
 /* navigation */
 
 .nav-list {
-    padding: 0;
-    display: flex;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-list-itm {
-    list-style: none;
-    text-transform: uppercase;
-    margin-left: 2em;
+  list-style: none;
+  text-transform: uppercase;
+  margin-left: 2em;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #707070;
-    font-weight: 700;
-    padding: .25em 0;
+  text-decoration: none;
+  color: #707070;
+  font-weight: 700;
+  padding: 0.25em 0;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #1792d2;
-    border-bottom: 1px solid #707070;
+  color: #1792d2;
+  border-bottom: 1px solid #707070;
 }
 
 /* Widgets */
 
-.widget-title {
-    text-transform: uppercase;
+.sidebar-widget {
+    border: 20px solid #EBEBEB;
+    opacity: 1;
+    margin-bottom: 2em;
+    padding: 1em;
 }
+
+.widget-recent-post {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #707070;
+    margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+    border: 0;
+    margin: 0;
+}
+
+.widget-image {
+    order: -1;
+}
+
+.widget-title {
+  text-transform: uppercase;
+  font-family: 'Ubuntu', serif;
+  font-weight: 700;
+}
+
+.sidebar-widget {
+    border: 20px solid #EBEBEB;
+    opacity: 1;
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+
 
 /* footer */
 
-footer{
-    text-align: center;
-    color: #f8f8f8;
-    background: #143774;
-    padding: 1em 0;
+footer {
+  text-align: center;
+  background: #143774;
+  padding: 3em 0;
+  color: #ffffff;
+  font-size: 18px;
 }
+
 /* media queries */
+@media (min-width: 675px) {
+  .container-flex {
+    flex-direction: row;
+  }
+
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  main {
+    width: 70%;
+  }
+
+  aside {
+    width: 25%;
+    min-width: 200px;
+    margin-left: 1em;
+  }
+
+  .sidebar-widget {
+    padding: 2em;
+  }
+
+  .article-recent-main {
+    width: 70%;
+  }
+
+  .article-recent-secondary {
+    width: 25%;
+  }
+
+  .article-featured {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-image {
+    order: -2;
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+  }
+
+  .article-info {
+    order: -1;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-list-itm {
+    margin: 0 .5em;
+  }
+}
 
 @media (max-width: 675px) {
-    .container-flex {
-        flex-direction: column;
-    }
+  .nav-list {
+    flex-direction: column;
+  }
 
-    header {
-        text-align: center;
-    }
+  .nav-list-itm {
+    margin: 0.5em 0;
+  }
 
-    .nav-list {
-        flex-direction: column;
-    }
+  .article-featured {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .nav-list-item {
-        margin: .5em 0;
-    }
+  .article-image {
+    order: -2;
+  }
+
+  .article-info {
+    order: -1;
+  }
 }
